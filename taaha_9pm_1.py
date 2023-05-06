@@ -54,7 +54,9 @@ In breakout, we will use 3 actions "fire", "left", and "right". "fire" is only u
 
 parser = argparse.ArgumentParser()
 parser.add_argument('filename')
-file_name = parser.filename
+
+args = parser.parse_args()
+file_name = args.filename
 
 env = gym.make('BreakoutDeterministic-v4')
 state = env.reset()
